@@ -1,0 +1,40 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle with Gradient -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <circle cx="256" cy="256" r="240" fill="url(#gradient1)"/>
+  
+  <!-- Briefcase Icon -->
+  <g transform="translate(256, 256)">
+    <!-- Briefcase body -->
+    <rect x="-100" y="-40" width="200" height="120" rx="20" fill="white" opacity="0.95"/>
+    
+    <!-- Briefcase handle -->
+    <path d="M -60 -40 L -60 -60 Q -60 -80 -40 -80 L 40 -80 Q 60 -80 60 -60 L 60 -40" 
+          stroke="white" stroke-width="16" fill="none" stroke-linecap="round" opacity="0.95"/>
+    
+    <!-- Lock/Clasp -->
+    <rect x="-15" y="-45" width="30" height="50" rx="8" fill="url(#gradient2)"/>
+    <circle cx="0" cy="-20" r="8" fill="white"/>
+    
+    <!-- Decorative lines -->
+    <line x1="-80" y1="0" x2="80" y2="0" stroke="url(#gradient2)" stroke-width="6" stroke-linecap="round"/>
+    <line x1="-80" y1="30" x2="-30" y2="30" stroke="rgba(102,126,234,0.3)" stroke-width="6" stroke-linecap="round"/>
+    <line x1="30" y1="30" x2="80" y2="30" stroke="rgba(102,126,234,0.3)" stroke-width="6" stroke-linecap="round"/>
+    <line x1="-80" y1="50" x2="80" y2="50" stroke="rgba(102,126,234,0.3)" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  
+  <!-- Checkmark badge -->
+  <circle cx="380" cy="140" r="50" fill="url(#gradient2)"/>
+  <path d="M 360 140 L 375 155 L 400 125" stroke="white" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

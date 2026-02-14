@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Tracker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="app-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-briefcase"></i>
+                    <h1>Job Tracker Pro</h1>
+                </div>
+                <nav class="header-nav">
+                    <button class="btn btn-secondary" id="exportBtn">
+                        <i class="fas fa-download"></i> Export Data
+                    </button>
+                    <button class="btn btn-primary" id="addJobBtn">
+                        <i class="fas fa-plus"></i> Add Application
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <div class="container">
+
+            <!-- Dashboard Stats -->
+            <section class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #e3f2fd;">
+                        <i class="fas fa-paper-plane" style="color: #1976d2;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="totalApps">0</h3>
+                        <p>Total Applications</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #fff3e0;">
+                        <i class="fas fa-clock" style="color: #f57c00;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="pendingApps">0</h3>
+                        <p>Pending</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #e8f5e9;">
+                        <i class="fas fa-calendar-check" style="color: #388e3c;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="interviewApps">0</h3>
+                        <p>Interviews</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon" style="background: #fce4ec;">
+                        <i class="fas fa-times-circle" style="color: #c2185b;"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3 id="rejectedApps">0</h3>
+                        <p>Rejected</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filters and Search -->
+            <section class="filters-section">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search by company, position, or location...">
+                </div>
+                <div class="filter-controls">
+                    <select id="statusFilter" class="filter-select" title="Filter applications by status">
+                        <option value="all">All Status</option>
+                        <option value="applied">Applied</option>
+                        <option value="interview">Interview</option>
+                        <option value="offer">Offer</option>
+                        <option value="rejected">Rejected</option>
+                        <option value="withdrawn">Withdrawn</option>
+                    </select>
+                    <select id="sortBy" class="filter-select" title="Sort applications">
+                        <option value="dateDesc">Newest First</option>
+                        <option value="dateAsc">Oldest First</option>
+                        <option value="company">Company A-Z</option>
+                        <option value="position">Position A-Z</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Applications Table -->
+            <section class="applications-section">
+                <div class="section-header">
+                    <h2>My Applications</h2>
+                    <span class="results-count" id="resultsCount">0 applications</span>
+                </div>
+
+                <div class="table-container">
+                    <table class="applications-table">
+                        <colgroup>
+                            <col style="width: 15%;">
+                            <col style="width: 20%;">
+                            <col style="width: 15%;">
+                            <col style="width: 15%;">
+                            <col style="width: 15%;">
+                            <col style="width: 20%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Position</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th>Applied Date</th>
+                                <th style="text-align: center;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="applicationsBody">
+                            <!-- Dynamic content -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <i class="fas fa-inbox"></i>
+                    <h3>No Applications Yet</h3>
+                    <p>Start tracking your job applications by clicking the "Add Application" button above.</p>
+                    <button class="btn btn-primary" onclick="document.getElementById('addJobBtn').click()">
+                        <i class="fas fa-plus"></i> Add Your First Application
+                    </button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Add/Edit Modal -->
+    <div class="modal" id="jobModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Add New Application</h2>
+                <button class="close-btn" id="closeModal" title="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="jobForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" required placeholder="e.g., Google">
+                    </div>
+                    <div class="form-group">
+                        <label for="position">Position *</label>
+                        <input type="text" id="position" required placeholder="e.g., Frontend Developer">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location *</label>
+                        <input type="text" id="location" required placeholder="e.g., Remote / San Francisco, CA">
+                    </div>
+                    <div class="form-group">
+                        <label for="salary">Salary Range</label>
+                        <input type="text" id="salary" placeholder="e.g., $80k - $120k">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status *</label>
+                        <select id="status" required>
+                            <option value="applied">Applied</option>
+                            <option value="interview">Interview Scheduled</option>
+                            <option value="offer">Offer Received</option>
+                            <option value="rejected">Rejected</option>
+                            <option value="withdrawn">Withdrawn</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appliedDate">Applied Date *</label>
+                        <input type="date" id="appliedDate" required>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="jobUrl">Job Posting URL</label>
+                        <input type="url" id="jobUrl" placeholder="https://...">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="contactPerson">Contact Person</label>
+                        <input type="text" id="contactPerson" placeholder="e.g., John Doe - Recruiter">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="notes">Notes</label>
+                        <textarea id="notes" rows="4"
+                            placeholder="Add any additional notes, interview details, or follow-up information..."></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn btn-primary" id="submitBtn">
+                        <i class="fas fa-save"></i> Save Application
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- View Details Modal -->
+    <div class="modal" id="viewModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Application Details</h2>
+                <button class="close-btn" id="closeViewModal" title="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="details-content" id="detailsContent">
+                <!-- Dynamic content -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="closeDetailsBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Success!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
