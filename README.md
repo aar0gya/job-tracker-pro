@@ -8,9 +8,7 @@
 
 **A professional, full-stack job application tracking system built with modern web technologies**
 
-[Live Demo](https://your-username.github.io/job-tracker-pro) • [Report Bug](https://github.com/aar0gya/job-tracker-pro/issues) • [Request Feature](https://github.com/aar0gya/job-tracker-pro/issues)
-
-<img src="screenshots/dashboard.png" alt="Dashboard Preview" width="800"/>
+[Live Demo](https://job-tracker-pro-opal.vercel.app/) • [Report Bug](https://github.com/aar0gya/job-tracker-pro/issues) • [Request Feature](https://github.com/aar0gya/job-tracker-pro/issues)
 
 </div>
 
@@ -107,7 +105,7 @@ Job Tracker Pro is a production-ready, full-stack application designed to stream
 
 ### **Live Application**
 
-👉 **[View Live Demo](https://your-username.github.io/job-tracker-pro)**
+👉 **[View Live Demo](https://job-tracker-pro-opal.vercel.app/)**
 
 ---
 
@@ -126,7 +124,8 @@ Job Tracker Pro is a production-ready, full-stack application designed to stream
 <img width="737" height="853" alt="add-application" src="https://github.com/user-attachments/assets/75383934-44c0-49f1-b668-d9c309176518" />
 
 ### Mobile View
-<img src="screenshots/mobile-view.png" alt="Mobile" width="400"/>
+![mobile-view-dashboard](https://github.com/user-attachments/assets/f525d7cb-adc0-4f1c-a0f5-e81214059e5e)
+![mobile-view-application-detail](https://github.com/user-attachments/assets/3cee9212-459b-4f54-937e-373309fc51b3)
 
 </details>
 
@@ -398,8 +397,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Your Name**
 
-- Portfolio: [yourportfolio.com](https://yourportfolio.com)
-- LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+- Portfolio: [yourportfolio.com](https://myportfolio-kappa-livid-43.vercel.app/)
+- LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/aarogya-bikram-thapa-ab63b6371)
 - GitHub: [@aar0gya](https://github.com/aar0gya)
 - Email: arogyathapa.10@gmail.com
 
