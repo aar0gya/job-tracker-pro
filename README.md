@@ -53,6 +53,7 @@ Job Tracker Pro is a production-ready, full-stack application designed to stream
 - 🔍 **Advanced Search** - Real-time search across all application fields
 - 🎯 **Smart Filtering** - Filter by status, sort by date or company
 - 📊 **Dashboard Analytics** - Visual statistics and metrics at a glance
+- 📈 **Visual Analytics** - Interactive bar chart showing application status distribution with detailed tooltips
 - 📁 **Data Export** - Export applications to JSON for backup or migration
 - 🔄 **Auto-sync** - Real-time data persistence with MongoDB
 
@@ -115,15 +116,19 @@ Job Tracker Pro is a production-ready, full-stack application designed to stream
 <summary>Click to expand screenshots</summary>
 
 ### Dashboard
+
 <img width="1912" height="936" alt="dashboard" src="https://github.com/user-attachments/assets/10a4565d-fe41-466b-b6c3-45951587f3e7" />
 
 ### Application List
+
 <img width="1352" height="666" alt="applications-list" src="https://github.com/user-attachments/assets/de91f91e-b255-43eb-b7e8-1ce3dbc051ca" />
 
 ### Add Application
+
 <img width="737" height="853" alt="add-application" src="https://github.com/user-attachments/assets/75383934-44c0-49f1-b668-d9c309176518" />
 
 ### Mobile View
+
 ![mobile-view-dashboard](https://github.com/user-attachments/assets/f525d7cb-adc0-4f1c-a0f5-e81214059e5e)
 ![mobile-view-application-detail](https://github.com/user-attachments/assets/3cee9212-459b-4f54-937e-373309fc51b3)
 
@@ -142,29 +147,34 @@ Job Tracker Pro is a production-ready, full-stack application designed to stream
 ### **Installation**
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/your-username/job-tracker-pro.git
    cd job-tracker-pro
    ```
 
 2. **Install dependencies**
+
    ```bash
    cd backend
    npm install
    ```
 
 3. **Configure environment variables**
+
    ```bash
    cp .env.example .env
    # Edit .env with your MongoDB URI
    ```
 
 4. **Start MongoDB** (if running locally)
+
    ```bash
    mongod
    ```
 
 5. **Start the backend server**
+
    ```bash
    npm run dev
    ```
@@ -246,6 +256,7 @@ job-tracker-pro/
 ## 📡 API Documentation
 
 ### **Base URL**
+
 ```
 http://localhost:5000/api
 ```
@@ -253,15 +264,19 @@ http://localhost:5000/api
 ### **Endpoints**
 
 #### **Get All Applications**
+
 ```http
 GET /applications
 ```
+
 **Query Parameters:**
+
 - `status` (optional) - Filter by status
 - `search` (optional) - Search term
 - `sortBy` (optional) - Sort criteria
 
 **Response:**
+
 ```json
 {
   "success": true,
@@ -271,11 +286,13 @@ GET /applications
 ```
 
 #### **Get Single Application**
+
 ```http
 GET /applications/:id
 ```
 
 #### **Create Application**
+
 ```http
 POST /applications
 Content-Type: application/json
@@ -290,16 +307,19 @@ Content-Type: application/json
 ```
 
 #### **Update Application**
+
 ```http
 PUT /applications/:id
 ```
 
 #### **Delete Application**
+
 ```http
 DELETE /applications/:id
 ```
 
 #### **Get Statistics**
+
 ```http
 GET /applications/stats
 ```
@@ -319,6 +339,7 @@ GET /applications/stats
 ### **Backend (Railway/Render)**
 
 #### **Railway**
+
 ```bash
 # Install Railway CLI
 npm install -g @railway/cli
@@ -330,6 +351,7 @@ railway up
 ```
 
 #### **Render**
+
 1. Connect your GitHub repository
 2. Select "Web Service."
 3. Set build command: `cd backend && npm install.`
