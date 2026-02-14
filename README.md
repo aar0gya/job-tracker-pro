@@ -397,9 +397,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Your Name**
 
-- Portfolio: [yourportfolio.com](https://myportfolio-kappa-livid-43.vercel.app/)
-- LinkedIn: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/aarogya-bikram-thapa-ab63b6371)
-- GitHub: [@aar0gya](https://github.com/aar0gya)
+- Portfolio: (https://myportfolio-kappa-livid-43.vercel.app/)
+- LinkedIn: (https://www.linkedin.com/in/aarogya-bikram-thapa-ab63b6371)
+- GitHub: (https://github.com/aar0gya)
 - Email: arogyathapa.10@gmail.com
 
 ---
@@ -410,14 +410,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Google Fonts for Inter typeface
 - MongoDB for a database platform
 - The open-source community
-
----
-
-## 📊 Project Stats
-
-![GitHub stars](https://img.shields.io/github/stars/aar0gya/job-tracker-pro?style=social)
-![GitHub forks](https://img.shields.io/github/forks/aar0gya/job-tracker-pro?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/aar0gya/job-tracker-pro?style=social)
 
 ---
 
